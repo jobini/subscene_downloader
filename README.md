@@ -2,7 +2,7 @@
 
 <h2><b>Synopsis</b></h2>
 
-This is a Python script that, given a path containing movie folders, recursively downloads the most matching, positive/neutrally rated English subtitle file from [Subscene](http://www.subscene.com) for every movie that doesn't already have one.
+This is a Python script that, given a path containing movie folders, recursively downloads a positively/neutrally rated English subtitle file from [Subscene](http://www.subscene.com) for every movie that doesn't already have one.
 
 <h2><b>Requirements</b></h2>
 
