@@ -13,13 +13,17 @@ This is a Python script that, given a path containing movie folders, recursively
 
 <h2><b>Usage</b></h2>
 
-First, set the path which contains the movie folders, by setting the `path` variable in `subscene_downloader.py`. Then, to run the script, simply run `python subscene_downloader.py` in the Terminal, from the directory of the extracted files. The subtitle file is downloaded to each corresponding movie folder.
+First, set the path which contains the movie folders, by setting the `path` variable in `subscene_downloader.py`. Then, to run the script, simply run `python subscene_downloader.py` in the Terminal, from the directory of the extracted files. The subtitle file is downloaded to each corresponding movie folder. 
+
+If no positively/neutrally rated subtitle is found for a particular movie, a message is printed saying so, and the script moves on to the next movie. 
+
+Once subtitles for all the movies are downloaded, the script ends with a message saying so. 
 
 <h2><b>To add</b></h2>
-
-~~1. Download subtitles for movies that are not in individual movie folders.~~
-2. Add support for subtitles in other languages
-
+<ol>
+<li>Download subtitles for movies that are not in individual movie folders.<li>
+<li>Add support for subtitles in other languages</li>
+</ol>
 <h2><b>License</b></h2>
 
 Please view LICENSE.md for details on the usage of code in this repository.
