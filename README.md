@@ -20,10 +20,10 @@ If no positively/neutrally rated subtitle is found for a particular movie, a mes
 Once subtitles for all the movies are downloaded, the script ends with a message saying so. 
 
 <h2><b>To add</b></h2>
-<ol>
-<li>Download subtitles for movies that are not in individual movie folders.<li>
-<li>Add support for subtitles in other languages</li>
-</ol>
+
+1. Download subtitles for movies that are not in individual movie folders. - DONE
+2. Add support for subtitles in other languages
+
 <h2><b>License</b></h2>
 
 Please view LICENSE.md for details on the usage of code in this repository.
