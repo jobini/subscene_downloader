@@ -2,11 +2,11 @@
 
 <h2><b>Synopsis</b></h2>
 
-This is a Python script that, given a path containing movie folders, recursively downloads a positively rated English subtitle file from [Subscene](http://www.subscene.com) for every movie that doesn't already have one.
+This is a Python script that, given a path containing movie folders, recursively downloads the most matching, positive/neutrally rated English subtitle file from [Subscene](http://www.subscene.com) for every movie that doesn't already have one.
 
 <h2><b>Requirements</b></h2>
 
-1. Python version 2.6+
+1. Python version 2.7.6+
 2. [requests](https://pypi.python.org/pypi/requests)
 3. [beautifulSoup4](https://pypi.python.org/pypi/beautifulsoup4)
 4. [clint](https://pypi.python.org/pypi/clint)
@@ -17,7 +17,8 @@ First, set the path which contains the movie folders, by setting the `path` vari
 
 <h2><b>To add</b></h2>
 
-1. Download subtitles for movies that are not in individual movie folders.
+~~1. Download subtitles for movies that are not in individual movie folders.~~
+2. Add support for subtitles in other languages
 
 <h2><b>License</b></h2>
 
