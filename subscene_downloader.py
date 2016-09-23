@@ -9,9 +9,17 @@ import operator
 path = "/media/jobsism10/2E381BD3381B9943/Downloads/Video/Movies/"
 
 moviefolders = os.listdir(path)
+is_file = False
 
 for folder in moviefolders:
-    files = os.listdir(path+folder)
+    try:
+        files = os.listdir(path+folder)
+    except OSError:
+        is_file = True
+        os.mkdir(path+folder[0:-4])
+        shutil.move(path+folder,path+folder[0:-4])
+        files = os.listdir(path+folder[0:-4])
+
     is_srt = False
     movie_name = ""
 
@@ -23,7 +31,10 @@ for folder in moviefolders:
     if not is_srt:
         size_dict = {}
         for item in files:
-            size_dict[item] = os.path.getsize(path+folder+'/'+item)
+            if is_file:
+                size_dict[item] = os.path.getsize(path+folder[0:-4]+'/'+item)
+            else:
+                size_dict[item] = os.path.getsize(path+folder+'/'+item)
 
         ordered_dict = sorted(size_dict.items(),key = operator.itemgetter(1),reverse = True)
         movie_name = ordered_dict[0][0][0:-3]
@@ -42,8 +53,7 @@ for folder in moviefolders:
             rating = rating.attrs["class"][2]
             goodsrt = False
 
-            if url.split("/")[-2] == 'english' and rating == 'positive-icon':
-                goodsrt = True
+            if url.split("/")[-2] == 'english' and (rating == 'positive-icon' or rating == 'neutral-icon'):
                 response2 = requests.get(url)
                 soup3 = BeautifulSoup(response2.text,"lxml")
                 soup3.prettify()
@@ -65,8 +75,12 @@ for folder in moviefolders:
                 srtfile = srtfile[0]
                 os.rename(srtfile,movie_name + 'srt')
                 srtfile = movie_name + 'srt'
-                shutil.move(srtfile,path+folder)
-                break
-
-        if not goodsrt:
+                if is_file:
+                    shutil.move(srtfile,path+folder[0:-4])
+                    break
+                else:
+                    shutil.move(srtfile,path+folder)
+                    break
             print "Sorry, no [good] subtitles were found for {0}".format(movie_name)
+
+print "Subtitles for all movies downloaded!"
