@@ -21,7 +21,7 @@ Once subtitles for all the movies are downloaded, the script ends with a message
 
 <h2><b>To add</b></h2>
 
-1. Download subtitles for movies that are not in individual movie folders. - DONE
+1. Download subtitles for movies that are not in individual movie folders - DONE
 2. Add support for subtitles in other languages
 
 <h2><b>License</b></h2>
