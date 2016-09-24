@@ -26,4 +26,4 @@ Once subtitles for all the movies are downloaded, the script ends with a message
 
 <h2><b>License</b></h2>
 
-Please view LICENSE.md for details on the usage of code in this repository.
+Please view LICENSE for details on the usage of code in this repository.
