@@ -69,7 +69,7 @@ for folder in moviefolders:
                     expected_size = total_size/128 + 1):
                         f.write(data)
 
-                subprocess.check_output(['7z', 'x','sub.zip'])
+                subprocess.check_output(['unzip','sub.zip'])
                 os.remove('sub.zip')
                 srtfile = [item for item in os.listdir(os.getcwd()) if item[-3:] == 'srt']
                 srtfile = srtfile[0]
