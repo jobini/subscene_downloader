@@ -44,7 +44,7 @@ for folder in moviefolders:
         soup.prettify()
 
         tdlist = soup.find_all('td',class_ = 'a1')
-        for i in tdlist:
+        for count,i in enumerate(tdlist):
             soup2 = BeautifulSoup(str(i.contents[1]),"lxml")
             soup2.prettify()
             link = soup2.find("a")
@@ -81,6 +81,7 @@ for folder in moviefolders:
                 else:
                     shutil.move(srtfile,path+folder)
                     break
-            print "Sorry, no [good] subtitles were found for {0}".format(movie_name)
+            if count == len(tdlist)-1:
+                print "Sorry, no subtitles were found for {0}".format(movie_name)
 
-print "Subtitles for all movies downloaded!"
+print "Movies' folder updated!"
